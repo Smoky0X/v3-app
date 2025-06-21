@@ -3,9 +3,21 @@ export interface User {
   email: string
   name: string
   avatar?: string
-  subscription: SubscriptionPlan
+  subscription?: {
+    type: string
+    status: string
+    expiresAt?: Date
+  }
+  preferences?: {
+    budget: number
+    fuelPreference: string
+    usage: string
+    priority: string
+    familySize: number
+  }
+  favorites?: string[]
+  history?: string[]
   createdAt: string
-  preferences: UserPreferences
 }
 
 export interface UserPreferences {
